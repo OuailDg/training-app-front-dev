@@ -1,0 +1,27 @@
+
+
+
+
+
+
+
+<p-card *ngIf="!selectedRole"  header="register" 
+         [style]="{ 'width':'360px' ,  'overflow-y': 'auto', 'overflow-x': 'auto', 'max-height': '80vh','min-height':'250px' , 'white-space':'nowrap'}" 
+          
+         >
+
+     <div >
+               
+          <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="20px" >
+
+               <div class="choice"  fxLayout="column" fxLayoutAlign="center center" routerLink="applicant" (click)="pickRole('student')"><i class="pi pi-user" style="font-size: 2rem"></i><h5>student</h5></div>
+               <div class="choice" fxLayout="column" fxLayoutAlign="center center" routerLink="company" (click)="pickRole('company')"><i class="pi pi-desktop" style="font-size: 2rem"></i><h6>company</h6></div>
+               
+          </div>
+  
+     </div>
+
+
+     
+</p-card>
+<router-outlet (activate)="pickRole($event)" (deactivate)="pickRole(undefined)" ></router-outlet>

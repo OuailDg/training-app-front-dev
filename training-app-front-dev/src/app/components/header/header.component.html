@@ -1,0 +1,55 @@
+<nav >
+    <div [ngClass]="{'hide': isScrolled && isHomePage}" id="upper-header" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="20px"   >
+    
+        <a href="">for students</a>
+        <div class="vertical-line"></div>
+        <a href="">for companies</a>
+        <div class="header-btn"  >
+            <a routerLink="login">login</a>
+        </div>
+    
+    </div>
+   
+<p-toolbar 
+    [ngClass]="{'sticky': isScrolled && isHomePage}" 
+    styleClass="bg-gray-400  lower-header" 
+    [style]="{ }">
+    
+    <ng-template pTemplate="start">
+        <a href="http://localhost:4200/home" class="logo-link">
+                
+            <img src="assets/logo3.png" style="display: inline;"/>
+        </a>
+    </ng-template>
+    
+    <ng-template pTemplate="end">
+        
+        <div class="flex align-items-center gap-4">
+            <a href="">find training</a>
+            <a href="">discover companies</a>
+            <a href="">legal matters</a>
+
+        
+
+            <div class="search" [ngClass]="{'active': isScrolled && isHomePage}" >
+                <div class="icon">
+                    <i class="pi pi-search" style="font-size: 1rem;"></i>
+                </div>
+                <div class="input" >
+
+                    <input type="search" placeholder="Search by keyword">
+
+                </div>
+            </div>
+            
+            <!--      theme switch -->
+            
+            <!-- <span class="p-input-switch-container">
+                    <p-inputSwitch [(ngModel)]="checked" (click)="onThemeChange(checked ? 'dark' : 'light')"></p-inputSwitch>
+                </span> -->
+        </div>
+    </ng-template>
+
+</p-toolbar>
+
+</nav>
